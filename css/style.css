@@ -1,0 +1,149 @@
+:root {
+    --text-dark: #21202d;
+    --text-light: #333146;
+    --text-small: #5d5a7a;
+    --border: #b8b3e5;
+    --background-light: #f2f1fc;
+    --blue-tracker: #4e42ce;
+}
+
+body {
+    background-color: var(--background-light);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+strong {
+    color: var(--text-dark);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    height: 60px;
+    border-bottom: 1px solid var(--border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: var(--background-light);
+}
+
+header>.center-menu {
+    grid-column: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header>.center-menu>.logo>img {
+    width: auto;
+    height: 35px;
+}
+
+header>.center-menu>.title{
+    font-size: 20px;
+    width: auto;
+    text-align: center;
+}
+
+
+.progress-container {
+    position: fixed;
+    top: 61px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    z-index: 10000;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--blue-tracker);
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* Conteúdo para demonstrar o scroll */
+.content {
+    margin-top: 70px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+}
+
+.content > * {
+    grid-column: 2;
+}
+
+h2 {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Botão voltar ao topo */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--blue-tracker);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000000;
+    pointer-events: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background: #3d34a5;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* Media queries */
+
+@media (max-width: 780px) {
+    header>.center-menu>.title{
+        width: auto;
+        font-size: 18px;
+    }
+
+    header>.center-menu>.logo>img{
+        height: 30px;
+        width: auto;
+    }
+}
+
+@media (max-width: 780px) {
+    header>.center-menu>.title{
+        width: auto;
+        font-size: 14px;
+    }
+}
