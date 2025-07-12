@@ -88,6 +88,7 @@ p {
     color: var(--text-light);
     line-height: 1.6;
     margin-bottom: 10px;
+    text-align: justify;
 }
 
 /* Botão voltar ao topo */
@@ -109,7 +110,7 @@ p {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s ease;
-    z-index: 1000000;
+    z-index: 1000;
     pointer-events: none;
 }
 
@@ -139,11 +140,29 @@ p {
         height: 30px;
         width: auto;
     }
+
+    .content{
+        grid-template-columns: 1fr 6fr 1fr;
+    }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 600px) {
     header>.center-menu>.title{
         width: auto;
         font-size: 14px;
     }
+
+    .content{
+        grid-template-columns: 1fr;
+        padding: 20px 40px;
+    }
+
+    h2{
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
 }

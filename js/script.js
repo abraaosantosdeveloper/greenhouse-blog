@@ -1,7 +1,7 @@
 const label = document.getElementById('label');
 
 function handleLabel() {
-    if (window.innerWidth <= 500) {
+    if (window.innerWidth <= 540) {
         label.textContent = "GHMS"
     }
     else {
