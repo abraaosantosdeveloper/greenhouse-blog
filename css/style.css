@@ -1,7 +1,9 @@
 :root {
     --text-dark: #21202d;
     --text-light: #333146;
+    --text-white: #eeedf8;
     --text-small: #5d5a7a;
+    --dark-background: #2f2e42;
     --border: #b8b3e5;
     --background-light: #f2f1fc;
     --blue-tracker: #4e42ce;
@@ -136,6 +138,68 @@ video {
     height: auto;
 }
 
+footer{
+    background-color: var(--dark-background);
+    color: var(--text-white);
+    padding: 30px 10px;
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+    text-align: center;
+    align-items: center;
+    margin-top: 150px;
+    border-top: 1px solid var(--border);
+}
+
+footer > * {
+    grid-column: 2;
+}
+
+footer > .information {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+footer > .information > .group {
+    grid-column: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+footer > .information > .group > ul{
+    padding: 0;
+}
+
+footer > .information > .group > ul > li {
+    list-style-type: none;
+    text-align: left;
+    font-size: 14px;
+}
+
+footer > .information >.source {
+    grid-column: 2;
+    align-items: center;
+    padding: 10px 20px;
+}
+footer > .information > .source > .git-repo{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer > .information > .source > .git-repo > img{
+    height: 20px;
+    width: auto;
+}
+
+footer > .information > .source > .git-repo > a {
+    color: var(--text-white);
+    font-size: 14px;
+}
+
+
+
 
 
 /* Media queries */
@@ -176,3 +240,25 @@ video {
     }
 
 }
+
+@media (max-width: 960px) {
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer > .information {
+        grid-template-columns: 1fr;
+    }
+
+    footer > .information > .group,  footer > .information > .source{
+        grid-column: 1;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    footer > .information > .group > ul > li {
+        text-align: center;
+    }
+}   
